@@ -6,7 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BaseScreen {
     protected AndroidDriver driver;
-    public BaseScreen (AndroiDriver driver) {
+    public BaseScreen (AndroidDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator (driver), this);
     }
+}
