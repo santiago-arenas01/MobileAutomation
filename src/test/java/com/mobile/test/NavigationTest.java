@@ -15,6 +15,10 @@ public class NavigationTest extends BaseTest {
     public void navigationTest(){
         BaseScreen baseScreen = new BaseScreen(driver);
         WebViewScreen webViewScreen = baseScreen.returnWebViewScreen();
+        Assert.assertTrue(webViewScreen.isMainTxtDisplayed());
+        webViewScreen.scrollWebViewScreenToReactBtn();
+        Assert.assertTrue(webViewScreen.isReactBtnDisplayed());
+        baseScreen.returnLoginScreen();
         softAssert.assertAll();
     }
 }
