@@ -10,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WebViewScreen extends BaseScreen {
 
-    private static final String MAIN_TXT = "UiSelector().text(\"Main\")";
-    @AndroidFindBy(uiAutomator = MAIN_TXT)
-    private WebElement mainTxt;
+    private static final String MAIN_BAR = "UiSelector().text(\"Main\")";
+    @AndroidFindBy(uiAutomator = MAIN_BAR)
+    private WebElement mainBar;
 
     @AndroidFindBy(accessibility = "react")
     private WebElement reactBtn;
@@ -23,6 +23,7 @@ public class WebViewScreen extends BaseScreen {
     }
 
     public void scrollWebViewScreenToReactBtn() {
+        waitUntilElementDisplayed(mainBar);
         Point source = new Point(97, 2519);
         Point target = new Point(97, 839);
         scroll(source, target);
@@ -33,8 +34,8 @@ public class WebViewScreen extends BaseScreen {
         scroll(source, target);
     }
 
-    public boolean isMainTxtDisplayed() {
-        return mainTxt.isDisplayed();
+    public boolean isMainBarDisplayed() {
+        return mainBar.isDisplayed();
     }
 
     public boolean isReactBtnDisplayed() {

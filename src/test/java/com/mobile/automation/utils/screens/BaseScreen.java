@@ -80,7 +80,7 @@ public class BaseScreen {
     }
 
     protected void waitUntilElementDisplayed(WebElement element) {
-        int seconds = 10;
+        int seconds = 15;
         Duration duration = Duration.ofSeconds(seconds);
         WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(ExpectedConditions.visibilityOf(element));
