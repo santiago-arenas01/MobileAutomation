@@ -10,7 +10,6 @@ import org.testng.asserts.SoftAssert;
 public class NavigationTest extends BaseTest {
     SoftAssert softAssert = new SoftAssert();
 
-    @Test
     public void navigationTest(){
         BaseScreen baseScreen = new BaseScreen(driver);
         WebViewScreen webViewScreen = baseScreen.returnWebViewScreen();

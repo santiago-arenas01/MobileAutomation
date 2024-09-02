@@ -41,7 +41,6 @@ public class BaseTest {
         }
     }
 
-
     public void loadProperties() {
         try {
             FileInputStream fileInputStream = new FileInputStream(PROPERTIES_FILE);
@@ -50,6 +49,7 @@ public class BaseTest {
             throw new RuntimeException("Error loading the properties file " + PROPERTIES_FILE);
         }
     }
+
     public static void setupCapabilities(UiAutomator2Options capabilities) {
         capabilities.setPlatformName(getCapability("platformName"));
         capabilities.setDeviceName(getCapability("deviceName"));

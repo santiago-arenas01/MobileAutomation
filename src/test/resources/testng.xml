@@ -11,4 +11,9 @@
             <class name="com.mobile.test.SignUpTest"></class>
         </classes>
     </test>
+    <test name = "Swipe cards Test">
+        <classes>
+            <class name="com.mobile.test.SwipeCardsTest"></class>
+        </classes>
+    </test>
 </suite>

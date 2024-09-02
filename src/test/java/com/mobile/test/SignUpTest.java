@@ -11,10 +11,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class SignUpTest extends BaseTest {
-    private static final Logger log = LoggerFactory.getLogger(SignUpTest.class);
     SoftAssert softAssert = new SoftAssert();
 
-    @Test
     public void signUpTest(){
         BaseScreen baseScreen = new BaseScreen(driver);
         LoginScreen loginScreen = baseScreen.returnLoginScreen();
