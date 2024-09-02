@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name = "My suite">
-    <test name = "Mobile Test">
+    <test name = "Navigation through menu bar Test">
         <classes>
             <class name="com.mobile.test.NavigationTest"></class>
+        </classes>
+    </test>
+    <test name = "Successful sign up Test">
+        <classes>
+            <class name="com.mobile.test.SignUpTest"></class>
         </classes>
     </test>
 </suite>

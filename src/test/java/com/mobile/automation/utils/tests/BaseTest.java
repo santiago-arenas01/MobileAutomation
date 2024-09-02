@@ -5,6 +5,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -32,6 +33,14 @@ public class BaseTest {
             System.out.println(exception.getMessage());
         }
     }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
 
     public void loadProperties() {
         try {
