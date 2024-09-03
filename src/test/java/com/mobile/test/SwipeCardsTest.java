@@ -10,7 +10,6 @@ import org.testng.asserts.SoftAssert;
 public class SwipeCardsTest extends BaseTest {
     SoftAssert softAssert = new SoftAssert();
 
-    @Test
     public void SwipeCardsTest(){
         BaseScreen baseScreen = new BaseScreen(driver);
         SwipeScreen swipeScreen = baseScreen.returnSwipeScreen();

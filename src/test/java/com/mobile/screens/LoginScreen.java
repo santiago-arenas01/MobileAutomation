@@ -10,12 +10,15 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginScreen extends BaseScreen {
 
     private static final String LOGIN_TITLE_TXT = "UiSelector().text(\"Login / Sign up Form\")";
-    private static final String LOGIN_BTN = "UiSelector().text(\"Login\").instance(0)";
+    private static final String LOGIN_LABEL_BTN = "UiSelector().text(\"Login\").instance(0)";
     private static final String SIGN_UP_LABEL_BTN = "UiSelector().text(\"Sign up\")";
+    private static final String LOGIN_BTN = "UiSelector().className(\"android.view.ViewGroup\").instance(16)";
     private static final String SIGN_UP_BTN = "UiSelector().className(\"android.view.ViewGroup\").instance(17)";
 
     @AndroidFindBy(uiAutomator = LOGIN_TITLE_TXT)
     private WebElement loginTitleTxt;
+    @AndroidFindBy(uiAutomator = LOGIN_LABEL_BTN)
+    private WebElement loginLabelBtn;
     @AndroidFindBy(uiAutomator = LOGIN_BTN)
     private WebElement loginBtn;
     @AndroidFindBy(uiAutomator = SIGN_UP_LABEL_BTN)
@@ -29,7 +32,9 @@ public class LoginScreen extends BaseScreen {
     @AndroidFindBy(accessibility = "input-repeat-password")
     private WebElement repeatPasswordTextField;
     @AndroidFindBy(id = "android:id/alertTitle")
-    private WebElement successTitleAlert;
+    private WebElement successLoginAlertTxt;
+    @AndroidFindBy(id = "android:id/alertTitle")
+    private WebElement successSignUpTitleAlertTxt;
     @AndroidFindBy(id = "android:id/button1")
     private WebElement okBtn;
 
@@ -43,7 +48,7 @@ public class LoginScreen extends BaseScreen {
     }
 
     public boolean isLoginBtnDisplayed() {
-        return loginBtn.isDisplayed();
+        return loginLabelBtn.isDisplayed();
     }
 
     public boolean isSignUpLabelBtnDisplayed() {
@@ -67,17 +72,18 @@ public class LoginScreen extends BaseScreen {
         return repeatPasswordTextField.isDisplayed();
     }
 
-    public boolean isSuccessTitleAlertDisplayed() {
-        this.waitUntilElementDisplayed(successTitleAlert);
-        return successTitleAlert.isDisplayed();
+    public boolean isSuccessLoginTitleAlertDisplayed() {
+        this.waitUntilElementDisplayed(successLoginAlertTxt);
+        return successSignUpTitleAlertTxt.isDisplayed();
+    }
+
+    public boolean isSuccessSignUpTitleAlertDisplayed() {
+        this.waitUntilElementDisplayed(successSignUpTitleAlertTxt);
+        return successSignUpTitleAlertTxt.isDisplayed();
     }
 
     public boolean isOkBtnDisplayed() {
         return okBtn.isDisplayed();
-    }
-
-    public void tapOnSignUpLabelBtn(){
-        signUpLabelBtn.click();
     }
 
     public void setEmailTextField(String email){
@@ -90,6 +96,15 @@ public class LoginScreen extends BaseScreen {
 
     public void setRepeatPasswordTextField(String password){
         repeatPasswordTextField.sendKeys(password);
+    }
+
+    public void tapOnSignUpLabelBtn(){
+        signUpLabelBtn.click();
+    }
+
+    public void tapOnLoginBtn(){
+        this.waitUntilElementDisplayed(loginBtn);
+        loginBtn.click();
     }
 
     public void tapOnSignUpBtn(){

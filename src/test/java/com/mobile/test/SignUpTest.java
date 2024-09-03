@@ -4,10 +4,7 @@ import com.mobile.automation.utils.Utils;
 import com.mobile.automation.utils.screens.BaseScreen;
 import com.mobile.automation.utils.tests.BaseTest;
 import com.mobile.screens.LoginScreen;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class SignUpTest extends BaseTest {
@@ -28,7 +25,7 @@ public class SignUpTest extends BaseTest {
         loginScreen.setRepeatPasswordTextField(randomPassword);
         Assert.assertTrue(loginScreen.isSignUpBtnDisplayed());
         loginScreen.tapOnSignUpBtn();
-        Assert.assertTrue(loginScreen.isSuccessTitleAlertDisplayed());
+        Assert.assertTrue(loginScreen.isSuccessSignUpTitleAlertDisplayed());
         Assert.assertTrue(loginScreen.isOkBtnDisplayed());
         loginScreen.tapOnOkBtn();
         softAssert.assertAll();
