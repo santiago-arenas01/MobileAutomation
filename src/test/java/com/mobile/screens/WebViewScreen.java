@@ -9,11 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class WebViewScreen extends BaseScreen {
+    private Point start;
 
     private static final String MAIN_BAR = "UiSelector().text(\"Main\")";
+
     @AndroidFindBy(uiAutomator = MAIN_BAR)
     private WebElement mainBar;
-
     @AndroidFindBy(accessibility = "react")
     private WebElement reactBtn;
 
@@ -22,19 +23,24 @@ public class WebViewScreen extends BaseScreen {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
+    public void tapOnWebViewScreen(){
+        start = new Point(97, 1000);
+    }
+
     public void scrollWebViewScreenToReactBtn() {
         waitUntilElementDisplayed(mainBar);
-        Point source = new Point(97, 2519);
-        Point target = new Point(97, 839);
-        scroll(source, target);
-        scroll(source, target);
-        scroll(source, target);
-        scroll(source, target);
-        scroll(source, target);
-        scroll(source, target);
+        start = new Point(97, 2519);
+        Point end = new Point(97, 839);
+        scroll(start, end);
+        scroll(start, end);
+        scroll(start, end);
+        scroll(start, end);
+        scroll(start, end);
+        scroll(start, end);
     }
 
     public boolean isMainBarDisplayed() {
+        this.waitUntilElementDisplayed(mainBar);
         return mainBar.isDisplayed();
     }
 

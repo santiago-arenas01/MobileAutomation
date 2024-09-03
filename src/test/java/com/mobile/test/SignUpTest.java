@@ -5,11 +5,13 @@ import com.mobile.automation.utils.screens.BaseScreen;
 import com.mobile.automation.utils.tests.BaseTest;
 import com.mobile.screens.LoginScreen;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class SignUpTest extends BaseTest {
     SoftAssert softAssert = new SoftAssert();
 
+    @Test
     public void signUpTest(){
         BaseScreen baseScreen = new BaseScreen(driver);
         LoginScreen loginScreen = baseScreen.returnLoginScreen();

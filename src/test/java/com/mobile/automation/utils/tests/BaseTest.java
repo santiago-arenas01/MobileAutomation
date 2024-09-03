@@ -1,10 +1,6 @@
 package com.mobile.automation.utils.tests;
 
-import com.mobile.screens.*;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import io.appium.java_client.android.AndroidDriver;
@@ -13,7 +9,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.Properties;
 
 public class BaseTest {

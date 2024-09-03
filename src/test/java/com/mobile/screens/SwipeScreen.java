@@ -64,6 +64,8 @@ public class SwipeScreen extends BaseScreen {
         scroll(start, end);
         scroll(start, end);
         scroll(start, end);
+        scroll(start, end);
+        scroll(start, end);
         this.waitUntilElementDisplayed(lastSwipeCard);
     }
 
