@@ -19,6 +19,8 @@ public class SwipeCardsTest extends BaseTest {
         Assert.assertFalse(swipeScreen.isFirstSwipeCardDisplayed());
         swipeScreen.scrollToLastCard();
         Assert.assertTrue(swipeScreen.isLastSwipeCardDisplayed());
+        swipeScreen.scrollDownScreen();
+        Assert.assertTrue(swipeScreen.isFoundMeMessageDisplayed());
         softAssert.assertAll();
     }
 }
